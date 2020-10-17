@@ -1,0 +1,6 @@
+<h1>hello new</h1>
+<%= form_for(@post) do |f| %>
+  <p><%= f.text_field :title %></p>
+  <p><%= f.text_area :body %></p>
+  <%= f.submit %>
+<% end %>

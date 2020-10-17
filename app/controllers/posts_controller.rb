@@ -16,9 +16,14 @@ class PostsController < ApplicationController
     @post.save
   end
 
-  def edit; end
+  def edit
+    @post = Post.find(params[:id])
+  end
 
-  def update; end
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+  end
 
   def delete; end
 

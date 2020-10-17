@@ -1,0 +1,6 @@
+{
+  "If false":{
+    "prefix": "iff",
+    "body": "<% if false %>$1"
+  }
+}

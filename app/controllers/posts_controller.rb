@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   end
 
   def new
- p 'dsf'
   end
 
   def create; end

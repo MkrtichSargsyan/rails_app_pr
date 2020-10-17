@@ -1,0 +1,6 @@
+<p>Hello index</p>
+<%= @posts.each do |post| %>
+  <p ><label>ID:</label> <%= post.id %> </p>
+  <p><label>Title:</label> <%= post.title %></p>
+  <p><label>Body:</label> <%= post.body %></p>
+<% end %>

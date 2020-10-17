@@ -25,7 +25,10 @@ class PostsController < ApplicationController
     @post.update(post_params)
   end
 
-  def delete; end
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+  end
 
   def post_params
     params.require(:post).permit(:title, :body)

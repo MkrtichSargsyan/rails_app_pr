@@ -3,4 +3,11 @@
   <p ><label>ID:</label> <%= post.id %> </p>
   <p><label>Title:</label> <%= post.title %></p>
   <p><label>Body:</label> <%= post.body %></p>
+  <p> <%= link_to 'Delete', post,method: :delete,data:{confirm:'Are you sure?'} %> </p>
 <% end %>
+
+
+
+
+
+

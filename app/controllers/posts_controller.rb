@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
-    edirect_to @post, notice: 'post has been updated'
+    redirect_to @post, notice: 'post has been updated'
   end
 
   def destroy

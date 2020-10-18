@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.save
+    redirect_to @post, notice: 'post has been created'
   end
 
   def edit
@@ -23,11 +24,13 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
+    edirect_to @post, notice: 'post has been updated'
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    redirect_to posts_url, notice: "Post deleted #{edit_post_url}"
   end
 
   def post_params

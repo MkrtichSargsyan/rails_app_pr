@@ -1,17 +1,11 @@
 <p>Hello index</p>
+<%= notice %> <br>
 <%= link_to 'Create A Post', new_post_path %>
-
 <%= @posts.each do |post| %>
   <p ><label>ID:</label> <%= post.id %> </p>
   <p><label>Title:</label> <%= post.title %></p>
   <p><label>Body:</label> <%= post.body %></p>
   <p><%= link_to 'Show Post', post_path(post) %></p>
-  <p><%= link_to 'Update Post', edit_post_path(post) %></p> 
+  <p><%= link_to 'Edit Post', edit_post_path(post) %></p>
   <p> <%= link_to 'Delete', post,method: :delete,data:{confirm:'Are you sure?'} %> </p>
 <% end %>
-
-
-
-
-
-

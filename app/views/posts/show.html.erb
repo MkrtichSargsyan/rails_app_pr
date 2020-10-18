@@ -1,6 +1,9 @@
 <p>hello show</p>
+<%= notice %>
+<%= link_to 'Posts', posts_path %>
+
 <p ><label>ID:</label> <%= @post.id %> </p>
 <p><label>Title:</label> <%= @post.title %></p>
 <p><label>Body:</label> <%= @post.body %></p>
 
-<%= link_to 'Update this post', edit_post_path(@post) %>
+<%= link_to 'Edit this post', edit_post_path(@post) %>

@@ -1,10 +1,4 @@
 <p>hello edit </p> 
-<%= notice %>
-
-  <%= form_for(@post) do |f| %>
-  <p><%= f.text_field :title %></p>
-  <p><%= f.text_area :body %></p>
-  <%= f.submit %>
-<% end %>
+<%= render 'posts/post_form' %>
 
 <%= link_to 'All Posts', posts_path %>

@@ -5,8 +5,7 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @post = Post.new
@@ -22,8 +21,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @post = Post.find(params[:id])

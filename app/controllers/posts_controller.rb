@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
+  before_action :get_post, only: %i[show edit update destroy]
+
   def index
     @posts = Post.all
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def new
@@ -22,7 +23,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
@@ -36,9 +36,14 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_url, notice: "Post deleted #{edit_post_url}"
+  end
+
+  private
+
+  def get_post
+    @post = Post.find(params[:id])
   end
 
   def post_params

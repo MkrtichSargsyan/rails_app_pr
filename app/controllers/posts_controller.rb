@@ -13,8 +13,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.save
-    redirect_to @post, notice: 'post has been created'
+
+    if @post.save
+      redirect_to @post, notice: 'post has been created'
+    else
+      redirect_to new_post_path, notice: 'there are some problems'
+    end
   end
 
   def edit
@@ -23,8 +27,12 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update(post_params)
-    redirect_to @post, notice: 'post has been updated'
+
+    if @post.update(post_params)
+      redirect_to @post, notice: 'post has been updated'
+    else
+      redirect_to edit_post_path(@post), notice: 'there are some problems'
+    end
   end
 
   def destroy
